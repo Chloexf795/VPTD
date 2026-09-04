@@ -1,9 +1,4 @@
 """Independent role-level implementation of temporal evidence attribution.
-
-This module implements the equations in the VPTD-EAE proposal without importing
-or copying runtime code from VAD or an EMNLP baseline. VAD remains cited prior
-work; this file implements the EAE-specific adaptation over event-role
-distributions rather than next-token distributions.
 """
 
 from __future__ import annotations

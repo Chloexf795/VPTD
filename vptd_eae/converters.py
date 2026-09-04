@@ -1,4 +1,4 @@
-"""Small, standalone converters for the ACE and SWiG processed schemas."""
+"""converters for the ACE and SWiG processed schemas."""
 
 from __future__ import annotations
 

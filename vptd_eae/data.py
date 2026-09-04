@@ -1,7 +1,7 @@
 """Event-type prototype construction using ACE/SWiG EAE formats.
 
 ACE and SWiG are not instance-paired. SWiG boxes therefore remain visual
-prototypes; they are never copied onto ACE entity mentions as instance labels.
+prototypes.
 """
 
 from __future__ import annotations
