@@ -1,0 +1,26 @@
+{
+  "project": "VPTD-EAE",
+  "repository": "https://github.com/Chloexf795/VPTD",
+  "baseline_compatibility": "EMNLP2026-style EAE/MLLM data and results",
+  "backbone": "Qwen3-VL-8B-Instruct",
+  "student_input": ["ACE sentence", "event type", "candidate entity"],
+  "static_teacher_input": ["ACE sentence", "event-type SWiG visual prototype"],
+  "privileged_teacher_input": ["ACE sentence", "event-type SWiG visual prototype", "synthetic video frames"],
+  "role_distribution": {
+    "include_none_role": true,
+    "event_specific_mask": true
+  },
+  "temporal_attribution": {
+    "video_hypotheses": 3,
+    "consensus_ratio": 0.6666666667,
+    "minimum_consensus_cosine": 0.5,
+    "positive_support_cap": 0.8,
+    "projection_ridge": 0.001,
+    "maximum_logit_shift": 4.0,
+    "distillation_weight": 1.0,
+    "static_anchor_weight": 0.1,
+    "supervised_weight": 1.0
+  },
+  "selection_metric": "dev.argument_classification.f1",
+  "seed": 42
+}

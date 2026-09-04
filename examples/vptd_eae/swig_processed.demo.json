@@ -1,0 +1,11 @@
+{
+  "attacking_demo.jpg": {
+    "verb": "attacking",
+    "width": 1000,
+    "height": 1000,
+    "bb": {
+      "agent": [20, 30, 300, 900],
+      "target": [400, 50, 950, 950]
+    }
+  }
+}

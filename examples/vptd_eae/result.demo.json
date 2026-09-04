@@ -1,0 +1,11 @@
+[
+  {
+    "sentence_id": "demo-0",
+    "event_type": "Conflict||Attack",
+    "ground_truth": [
+      {"role": "Attacker", "entity": "Rebels"},
+      {"role": "Target", "entity": "the base"}
+    ],
+    "output": "[{\"role\": \"Attacker\", \"entity\": \"Rebels\"}, {\"role\": \"Target\", \"entity\": \"the base\"}]"
+  }
+]

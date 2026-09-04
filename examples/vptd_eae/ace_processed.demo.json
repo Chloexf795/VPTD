@@ -1,0 +1,21 @@
+[
+  {
+    "doc_id": "demo-doc",
+    "sent_id": "0",
+    "sentence": "Rebels attacked the base.",
+    "entity_mentions": [
+      {"entity_type": "ORG", "text": "Rebels"},
+      {"entity_type": "FAC", "text": "the base"}
+    ],
+    "event_mentions": [
+      {
+        "event_type": "Conflict:Attack",
+        "trigger": {"text": "attacked"},
+        "arguments": [
+          {"role": "Attacker", "text": "Rebels"},
+          {"role": "Target", "text": "the base"}
+        ]
+      }
+    ]
+  }
+]

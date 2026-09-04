@@ -1,0 +1,2 @@
+attacking	agent	Conflict||Attack	Attacker
+attacking	target	Conflict||Attack	Target
