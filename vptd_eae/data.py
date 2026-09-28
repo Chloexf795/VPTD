@@ -1,7 +1,7 @@
 """Event-type prototype construction using ACE/SWiG EAE formats.
 
 ACE and SWiG are not instance-paired. SWiG boxes therefore remain visual
-prototypes.
+prototypes; they are never copied onto ACE entity mentions as instance labels.
 """
 
 from __future__ import annotations
@@ -39,6 +39,9 @@ def read_json_or_jsonl(path: str | Path) -> Any:
     path = Path(path)
     text = path.read_text(encoding="utf-8")
     try:
+        if path.suffix.lower() == '.jsonl':
+            # One-line JSONL is still a list of records, not a JSON mapping.
+            return [json.loads(line) for line in text.splitlines() if line.strip()]
         return json.loads(text)
     except json.JSONDecodeError:
         records = []

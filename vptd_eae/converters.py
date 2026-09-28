@@ -1,4 +1,4 @@
-"""converters for the ACE and SWiG processed schemas."""
+"""Small, standalone converters for the ACE and SWiG processed schemas."""
 
 from __future__ import annotations
 
@@ -17,6 +17,8 @@ def convert_ace_records(records: Sequence[Mapping[str, Any]]) -> list[dict[str, 
     for sentence_record in records:
         sentence = str(sentence_record.get("sentence", ""))
         for event in sentence_record.get("event_mentions", []):
+            trigger = event.get("trigger", "")
+            trigger_text = trigger.get("text", "") if isinstance(trigger, Mapping) else trigger
             arguments = []
             for argument in event.get("arguments", []):
                 role = str(argument.get("role", "")).strip()
@@ -29,8 +31,16 @@ def convert_ace_records(records: Sequence[Mapping[str, Any]]) -> list[dict[str, 
                     "sent_id": sentence_record.get("sent_id", len(converted)),
                     "sentence": sentence,
                     "event_type": normalize_event_type(str(event.get("event_type", ""))),
-                    "trigger": str(event.get("trigger", {}).get("text", event.get("trigger", ""))),
+                    "trigger": str(trigger_text),
                     "arguments": arguments,
+                    "source_annotations": {
+                        "doc_id": sentence_record.get("doc_id"),
+                        "sent_id": sentence_record.get("sent_id"),
+                        "event_id": event.get("event_id", event.get("id")),
+                        "trigger": dict(trigger) if isinstance(trigger, Mapping) else {"text": str(trigger_text)},
+                        "arguments": [dict(a) for a in event.get("arguments", [])],
+                    },
+                    "entity_mentions": [dict(e) for e in sentence_record.get("entity_mentions", [])],
                 }
             )
     return converted

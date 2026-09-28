@@ -1,0 +1,2 @@
+# Keep GPU training in its own pinned Python 3.12 environment (framework.lock.json).
+-e .[inference]

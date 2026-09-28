@@ -4,7 +4,7 @@ from vptd_eae.role_support import NONE_ROLE, ROLE_TO_INDEX, build_role_mask, rol
 
 
 class RoleSupportTests(unittest.TestCase):
-    def test_attack_support_uses_local_schema_and_none(self):
+    def test_attack_support_uses_emnlp_schema_and_none(self):
         roles = roles_for_event("Conflict:Attack")
         self.assertIn("Attacker", roles)
         self.assertIn("Target", roles)

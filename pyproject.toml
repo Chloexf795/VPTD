@@ -10,5 +10,9 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["torch>=2.1"]
 
+[project.optional-dependencies]
+inference = ["transformers>=5.5,<6", "accelerate>=1,<2", "openai>=1,<3", "Pillow>=10", "pyarrow>=18"]
+data = ["Pillow>=10", "remotezip==0.12.6"]
+
 [tool.setuptools.packages.find]
 include = ["vptd_eae*"]

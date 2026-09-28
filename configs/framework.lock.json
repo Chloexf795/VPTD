@@ -1,0 +1,16 @@
+{
+  "name": "Vision-OPD",
+  "repository": "https://github.com/VisionOPD/Vision-OPD.git",
+  "commit": "c8a8fdd1f88eef1b5ef4fe6a8d64eb0272917471",
+  "license": "Apache-2.0",
+  "python": "3.12",
+  "runtime_versions": {
+    "torch": "2.10.0",
+    "transformers": "5.5.0",
+    "vllm": "0.18.0",
+    "ray": "2.53.0",
+    "datasets": "4.4.2",
+    "qwen-vl-utils": "0.0.14",
+    "flash-attn": "2.8.3.post1"
+  }
+}

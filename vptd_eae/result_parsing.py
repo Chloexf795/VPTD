@@ -1,3 +1,5 @@
+"""Robust parsing for JSON-style generative EAE model outputs."""
+
 from __future__ import annotations
 
 import ast

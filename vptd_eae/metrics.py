@@ -1,3 +1,5 @@
+"""Exact EAE Precision/Recall/F1 and directional-role diagnostics."""
+
 from __future__ import annotations
 
 from collections import defaultdict

@@ -8,3 +8,12 @@ dataset/
 checkpoints/
 *.ckpt
 *.safetensors
+external/
+data/
+models/
+logs/
+rollouts/
+*.egg-info/
+.env
+.env.*
+!.env.example
